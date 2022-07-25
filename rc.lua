@@ -894,4 +894,3 @@ awful.spawn.with_shell(" /usr/libexec/polkit-gnome-authentication-agent-1 &")
 --Autoconfigure screens for my personal setup
 --awful.spawn.with_shell("cd ~/.config/awesome && chmod +x dualmonitorDisplayPort.sh && ./dualmonitorDisplayPort.sh &")
 awful.spawn.with_shell("pkill dualmonitorHDMI; cd ~/.config/awesome; ./dualmonitorHDMI.sh &")
---
