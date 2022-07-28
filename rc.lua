@@ -58,7 +58,7 @@ awful.mouse.snap.edge_enabled = true
 
 -- This is used later as the default terminal and editor to run.
 terminal = "kitty"
-editor = os.getenv("codium") or "vim"
+editor = os.getenv("codium") or "nvim"
 editor_cmd = terminal .. " -e " .. editor
 
 -- Default modkey.
