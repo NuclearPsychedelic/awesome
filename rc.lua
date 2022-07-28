@@ -274,9 +274,9 @@ globalkeys = gears.table.join(
 globalkeys = gears.table.join(
     awful.key({ modkey,           }, "s",      hotkeys_popup.show_help,
               {description="show help", group="awesome"}),
-    awful.key({ modkey,           }, "[",   awful.tag.viewprev,
+    awful.key({ modkey,           }, ";",   awful.tag.viewprev,
               {description = "view previous", group = "tag"}),
-    awful.key({ modkey,           }, "]",  awful.tag.viewnext,
+    awful.key({ modkey,           }, "'",  awful.tag.viewnext,
               {description = "view next", group = "tag"}),
     --awful.key({ modkey,           }, "Tab", awful.tag.history.restore,
     --          {description = "go back", group = "tag"}),
@@ -338,14 +338,14 @@ globalkeys = gears.table.join(
     awful.key({ modkey, "Shift"   }, "k", function () awful.client.swap.byidx( -1)    end,
               {description = "swap with previous client by index", group = "client"}),
               ]]--
-    awful.key({ modkey, }, "'", function () awful.screen.focus_relative( 1) end,
+    awful.key({ modkey, }, "]", function () awful.screen.focus_relative( 1) end,
               {description = "focus the next screen", group = "screen"}),
-    awful.key({ modkey, }, ";", function () awful.screen.focus_relative(-1) end,
+    awful.key({ modkey, }, "[", function () awful.screen.focus_relative(-1) end,
               {description = "focus the previous screen", group = "screen"}),
     awful.key({ modkey,           }, "u", awful.client.urgent.jumpto,
               {description = "jump to urgent client", group = "client"}),
 
-    awful.key({ modkey, "Shift" }, "]", function()
+    awful.key({ modkey, "Shift" }, "'", function()
                 local screen = awful.screen.focused()
                 local t = screen.selected_tag
                 if t then
@@ -359,7 +359,7 @@ globalkeys = gears.table.join(
               end,
               {description = "move focused client to next tag and view tag", group = "tag"}),
           
-    awful.key({ modkey, "Shift" }, "[", function()
+    awful.key({ modkey, "Shift" }, ";", function()
                 local screen = awful.screen.focused()
                 local t = screen.selected_tag
                 if t then
@@ -588,9 +588,9 @@ clientkeys = gears.table.join(
               {description = "toggle floating", group = "client"}),
     awful.key({ modkey, "Control" }, "Return", function (c) c:swap(awful.client.getmaster()) end,
               {description = "move to master", group = "client"}),
-    awful.key({ modkey, "Shift" }, ";",      function (c) c:move_to_screen()               end,
+    awful.key({ modkey, "Shift" }, "[",      function (c) c:move_to_screen()               end,
               {description = "move to screen", group = "client"}),
-    awful.key({ modkey, "Shift" }, "'",      function (c) c:move_to_screen()               end,
+    awful.key({ modkey, "Shift" }, "]",      function (c) c:move_to_screen()               end,
               {description = "move to screen", group = "client"}),
     awful.key({ modkey,           }, "t",      function (c) c.ontop = not c.ontop            end,
               {description = "toggle keep on top", group = "client"}),
