@@ -1,7 +1,8 @@
-Set up grid workspaces
+Set up a taglist of taglists and appropriate hotkeys
 Define proper window rules; line: 807
 Change tag names
 Set up bluetooth
 launch xmodmap properly?
 create xmodmap toggle
 make hjkl hotkeys not work across monitors
+create visual alert for caps lock activation
