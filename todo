@@ -4,3 +4,4 @@ Change tag names
 Set up bluetooth
 launch xmodmap properly?
 create xmodmap toggle
+make hjkl hotkeys not work across monitors
