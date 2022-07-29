@@ -502,15 +502,6 @@ globalkeys = gears.table.join(
     awful.key({ modkey }, "p", function() menubar.show() end,
               {description = "show the menubar", group = "launcher"}),
 
-    -- Reload startup apps
-    awful.key({ modkey, }, "z", function() 
-        awful.spawn.with_shell("nitrogen --restore --set-zoom-fill ~/Pictures/Wallpapers & && picom & && [[ -f ~/.Xmodmap ]] && xmodmap ~/.Xmodmap &") 
-        end),
-    -- Reload keyboard default
-    awful.key({ modkey, "Shift", }, "z", function() 
-        awful.spawn.with_shell("setxkbmap") 
-        end),
-    
     -- Manually set up monitors
     -- dual monitors:
     awful.key({ modkey, modkey2, }, "m", function() 
