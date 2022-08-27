@@ -505,12 +505,13 @@ globalkeys = gears.table.join(
     -- Manually set up monitors
     -- dual monitors:
     awful.key({ modkey, modkey2, }, "m", function() 
-        awful.spawn.with_shell("xrandr --output DP-0 --primary --mode 1920x1080 --refresh 144 --rotate normal --output eDP-1-1 --mode 1920x1080 --refresh 144 --right-of DP-0 --rotate normal && nitrogen --restore --set-zoom-fill ~/Pictures/Wallpapers") 
-        end),
+        awful.spawn.with_shell("cd ~/.config/awesome; ./dualmonitorHDMIswitcheroo.sh &") 
+        end,
+            {description = "Switch to and from the dual monitor setup", group = "screen"}),
     -- single monitor:
-    awful.key({ modkey, modkey2, "Shift" }, "m", function() 
+    --[[awful.key({ modkey, modkey2, "Shift" }, "m", function() 
         awful.spawn.with_shell("xrandr --output DP-0 --off --output eDP-1-1 --mode 1920x1080 --refresh 144 --rotate normal && nitrogen --restore --set-zoom-fill ~/Pictures/Wallpapers") 
-        end),
+        end)]]--,
 
 
     -- Lock the screen
@@ -885,3 +886,4 @@ awful.spawn.with_shell(" /usr/libexec/polkit-gnome-authentication-agent-1 &")
 --Autoconfigure screens for my personal setup
 --awful.spawn.with_shell("cd ~/.config/awesome && chmod +x dualmonitorDisplayPort.sh && ./dualmonitorDisplayPort.sh &")
 awful.spawn.with_shell("pkill dualmonitorHDMI; cd ~/.config/awesome; ./dualmonitorHDMI.sh &")
+awful.spawn.with_shell("cd ~/.config/awesome; ./dualmonitorHDMIswitcheroo.sh &")
