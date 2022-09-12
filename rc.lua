@@ -880,11 +880,15 @@ awful.spawn.with_shell(" pkill picom; picom &")
 --Keyboard layout (with Xmodmap):
 awful.spawn.with_shell("[[ -f ~/.Xmodmap ]] && xmodmap ~/.Xmodmap")
 
+--Authentication agent(gnome-polkit):
+awful.spawn.with_shell(" /usr/libexec/polkit-gnome-authentication-agent-1 &")
+
+--Flameshot
+awful.spawn.with_shell("pkill flameshot; flameshot")
+
 --Internet connection tray applet (nm-applet):
 awful.spawn.with_shell("pkill nm-applet; nm-applet &")
 
---Authentication agent(gnome-polkit):
-awful.spawn.with_shell(" /usr/libexec/polkit-gnome-authentication-agent-1 &")
 
 --Autoconfigure screens for my personal setup
 --awful.spawn.with_shell("cd ~/.config/awesome && chmod +x dualmonitorDisplayPort.sh && ./dualmonitorDisplayPort.sh &")
