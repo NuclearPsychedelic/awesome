@@ -463,9 +463,12 @@ globalkeys = gears.table.join(
     ]]--
 
     --Browser
-    awful.key({ modkey },            "b",     function ()
+    awful.key({ modkey, modkey2 },            "b",     function ()
         awful.util.spawn("brave-browser") end,
                   {description = "Open a browser (Brave)", group = "launcher"}),
+    awful.key({ modkey, },            "b",     function ()
+        awful.util.spawn("librewolf") end,
+                  {description = "Open a browser (Librewolf)", group = "launcher"}),
 
     -- VsCodium
     awful.key({ modkey },            "v",     function ()
@@ -520,10 +523,10 @@ globalkeys = gears.table.join(
                   {description = "Lock the screen", group = "screen"}),
     -- Take a screenshot
     awful.key({},            "Print",     function ()
-        awful.spawn.with_shell("gnome-screenshot") end,
+        awful.spawn.with_shell("flameshot full") end,
                   {description = "Take a screenshot", group = "screen"}),
     awful.key({ modkey, modkey2 },            "BackSpace",     function ()
-        awful.spawn.with_shell("gnome-screenshot") end,
+        awful.spawn.with_shell("flameshot full") end,
                   {description = "Take a screenshot", group = "screen"}),
 
     -- Volume control
@@ -885,5 +888,8 @@ awful.spawn.with_shell(" /usr/libexec/polkit-gnome-authentication-agent-1 &")
 
 --Autoconfigure screens for my personal setup
 --awful.spawn.with_shell("cd ~/.config/awesome && chmod +x dualmonitorDisplayPort.sh && ./dualmonitorDisplayPort.sh &")
-awful.spawn.with_shell("pkill dualmonitorHDMI; cd ~/.config/awesome; ./dualmonitorHDMI.sh &")
-awful.spawn.with_shell("cd ~/.config/awesome; ./dualmonitorHDMIswitcheroo.sh &")
+--awful.spawn.with_shell("pkill dualmonitorHDMI; cd ~/.config/awesome; ./dualmonitorHDMI.sh &")
+--awful.spawn.with_shell("cd ~/.config/awesome; ./dualmonitorHDMIswitcheroo.sh &")
+--awful.spawn.with_shell("cd ~/.config/awesome; ./dualmonitorHDMIswitcheroo.sh &")
+--awful.spawn.single_instance("bash | ./.config/awesome/dualmonitorHDMIswitcheroo.sh &")
+awful.spawn.with_shell("xrandr --output eDP-1 --mode 1920x1080 --refresh 144 --rotate normal --output HDMI-1 --primary --mode 1920x1080 --refresh 144 --rotate normal --left-of eDP-1")
